@@ -14,17 +14,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
-                
-                // Add special animation for benefit cards
-                if (entry.target.classList.contains('benefit-card')) {
-                    entry.target.style.animation = 'cardSlideUp 0.6s ease forwards';
-                }
             }
         });
     }, observerOptions);
     
     // Observe elements for animation
-    const animatedElements = document.querySelectorAll('.hero-content, .cta-section, .benefit-card, .final-cta-content');
+    const animatedElements = document.querySelectorAll('.hero-content, .cta-section, .final-cta-content');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
@@ -52,21 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 800);
     }, 3500);
     
-    // Add hover effect to benefit cards
-    const benefitCards = document.querySelectorAll('.benefit-card');
-    benefitCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            const icon = this.querySelector('.benefit-icon');
-            icon.style.transform = 'rotate(8deg) scale(1.05)';
-            icon.style.transition = 'transform 0.3s ease';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            const icon = this.querySelector('.benefit-icon');
-            icon.style.transform = 'rotate(0) scale(1)';
-        });
-    });
-    
     // Add click effect to buttons
     const buttons = document.querySelectorAll('.btn');
     buttons.forEach(btn => {
@@ -80,6 +60,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 150);
         });
     });
+    
+    // Add subtle text highlight animation
+    const highlight = document.querySelector('.highlight');
+    if (highlight) {
+        setInterval(() => {
+            highlight.style.color = '#ff6b9d';
+            setTimeout(() => {
+                highlight.style.color = '';
+            }, 500);
+        }, 4000);
+    }
 });
 
 // Create floating particles in background
@@ -102,19 +93,3 @@ function createFloatingParticles() {
         particlesContainer.appendChild(particle);
     }
 }
-
-// Add CSS animation for card slide up
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes cardSlideUp {
-        0% {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-`;
-document.head.appendChild(style);

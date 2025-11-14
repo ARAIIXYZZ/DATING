@@ -167,6 +167,27 @@ h1 {
     opacity: 0.9;
 }
 
+/* Iklan Styles */
+.ad-container {
+    margin: 25px auto;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease;
+}
+
+.ad-mobile-banner {
+    max-width: 320px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* Features Section */
 .features {
     display: flex;
@@ -344,7 +365,7 @@ h1 {
     width: 10px;
     height: 10px;
     background: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
+    border-radius: '50%';
     animation: particle 0.6s ease-out forwards;
 }
 
@@ -555,6 +576,10 @@ footer {
         margin-bottom: 20px;
     }
     
+    .ad-mobile-banner {
+        margin: 20px auto;
+    }
+    
     .features {
         flex-direction: column;
         align-items: center;
@@ -634,5 +659,9 @@ footer {
     
     .floating-element {
         display: none;
+    }
+    
+    .ad-mobile-banner {
+        max-width: 300px;
     }
 }

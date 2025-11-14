@@ -1,8 +1,6 @@
 // Testimonial rotation
 document.addEventListener('DOMContentLoaded', function() {
     const testimonials = document.querySelectorAll('.testimonial');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
     let currentTestimonial = 0;
     let testimonialInterval;
     
@@ -17,33 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
         showTestimonial(nextIndex);
     }
     
-    function showPrevTestimonial() {
-        let prevIndex = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-        showTestimonial(prevIndex);
-    }
-    
-    // Change testimonial every 6 seconds
+    // Change testimonial every 5 seconds
     function startTestimonialRotation() {
-        testimonialInterval = setInterval(showNextTestimonial, 6000);
+        testimonialInterval = setInterval(showNextTestimonial, 5000);
     }
-    
-    // Pause rotation when user interacts with controls
-    function pauseTestimonialRotation() {
-        clearInterval(testimonialInterval);
-    }
-    
-    // Event listeners for manual controls
-    nextBtn.addEventListener('click', function() {
-        pauseTestimonialRotation();
-        showNextTestimonial();
-        setTimeout(startTestimonialRotation, 12000);
-    });
-    
-    prevBtn.addEventListener('click', function() {
-        pauseTestimonialRotation();
-        showPrevTestimonial();
-        setTimeout(startTestimonialRotation, 12000);
-    });
     
     // Add particle effect to button on hover
     const btns = document.querySelectorAll('.btn');

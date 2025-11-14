@@ -5,9 +5,9 @@
 }
 
 :root {
-    --primary: #ff6b8b;
-    --secondary: #e94560;
-    --accent: #ff8fa3;
+    --primary: #20B2AA;
+    --secondary: #008B8B;
+    --accent: #48D1CC;
     --dark: #0a0a0a;
     --darker: #1a1a1a;
     --light: #ffffff;
@@ -47,10 +47,10 @@ body {
     height: 100%;
     background: linear-gradient(
         90deg,
-        rgba(10, 10, 10, 0.95) 0%,
-        rgba(10, 10, 10, 0.85) 30%,
-        rgba(10, 10, 10, 0.7) 50%,
-        rgba(10, 10, 10, 0.4) 100%
+        rgba(10, 10, 10, 0) 0%,
+        rgba(10, 10, 10, 0) 40%,
+        rgba(10, 10, 10, 0.8) 60%,
+        rgba(10, 10, 10, 0.95) 100%
     );
     z-index: -1;
 }
@@ -72,11 +72,12 @@ header {
 
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 32px;
+    font-size: 48px;
     font-weight: 700;
     letter-spacing: 3px;
     color: var(--primary);
-    text-shadow: 0 0 20px rgba(255, 107, 139, 0.6);
+    text-shadow: 0 0 25px rgba(32, 178, 170, 0.6);
+    margin-bottom: 10px;
 }
 
 /* Iklan Styles */
@@ -101,28 +102,29 @@ header {
 
 /* Hero Section */
 .hero {
-    padding: 40px 0 30px 0;
-    text-align: left;
+    padding: 30px 0;
+    text-align: center;
     position: relative;
-    max-width: 600px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero-content {
-    animation: slideInLeft 1s ease;
+    animation: fadeInUp 1s ease;
 }
 
 h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 42px;
+    font-size: 36px;
     font-weight: 700;
     margin-bottom: 20px;
-    line-height: 1.2;
+    line-height: 1.3;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .highlight {
     color: var(--primary);
-    text-shadow: 0 0 15px rgba(255, 107, 139, 0.6);
+    text-shadow: 0 0 15px rgba(32, 178, 170, 0.6);
     position: relative;
     display: inline-block;
 }
@@ -146,25 +148,26 @@ h1 {
 }
 
 .subtitle {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     opacity: 0.9;
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
 /* CTA Section */
 .cta-section {
-    text-align: left;
+    text-align: center;
     padding: 30px 0;
     opacity: 0;
     animation: fadeIn 1s ease 0.5s forwards;
     position: relative;
-    max-width: 600px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .cta-text {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 25px;
     font-weight: 400;
     line-height: 1.6;
@@ -174,14 +177,14 @@ h1 {
 
 .btn {
     display: inline-block;
-    padding: 15px 35px;
+    padding: 14px 32px;
     background: linear-gradient(45deg, var(--primary), var(--secondary));
     color: white;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
     border-radius: 50px;
-    box-shadow: 0 5px 20px rgba(233, 69, 96, 0.4);
+    box-shadow: 0 5px 20px rgba(32, 178, 170, 0.4);
     transition: all 0.3s ease;
     letter-spacing: 1px;
     position: relative;
@@ -191,8 +194,8 @@ h1 {
 }
 
 .btn-large {
-    padding: 18px 45px;
-    font-size: 18px;
+    padding: 16px 40px;
+    font-size: 16px;
 }
 
 .btn span {
@@ -217,7 +220,7 @@ h1 {
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(233, 69, 96, 0.6);
+    box-shadow: 0 8px 25px rgba(32, 178, 170, 0.6);
     background: linear-gradient(45deg, var(--secondary), var(--primary));
 }
 
@@ -256,30 +259,33 @@ h1 {
 
 /* Testimonials */
 .testimonial-section {
-    margin: 50px 0;
+    margin: 40px auto;
     position: relative;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 40px 30px;
+    border-radius: 15px;
+    padding: 30px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 1000px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
 }
 
 .section-title {
     text-align: center;
     font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    margin-bottom: 40px;
+    font-size: 28px;
+    margin-bottom: 30px;
     color: var(--light);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .testimonial-container {
-    max-width: 800px;
-    margin: 0 auto;
+    flex: 1;
     position: relative;
-    height: 300px;
     overflow: hidden;
+    border-radius: 10px;
 }
 
 .testimonial {
@@ -288,9 +294,6 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     opacity: 0;
     transform: translateX(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -302,25 +305,35 @@ h1 {
 }
 
 .testimonial-content {
-    text-align: center;
-    max-width: 600px;
-    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    gap: 30px;
 }
 
 .testimonial-photo {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 20px;
-    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
     overflow: hidden;
     border: 3px solid var(--primary);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
 }
 
 .testimonial-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.testimonial-text-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
 }
 
 .testimonial-text {
@@ -334,18 +347,17 @@ h1 {
 .testimonial-author {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 15px;
 }
 
 .author-info {
-    text-align: center;
+    text-align: left;
 }
 
 .author-name {
     font-weight: 600;
     color: var(--primary);
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .author-details {
@@ -359,15 +371,15 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .testimonial-btn {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: rgba(255, 107, 139, 0.2);
-    border: 2px solid rgba(255, 107, 139, 0.3);
+    background: rgba(32, 178, 170, 0.2);
+    border: 2px solid rgba(32, 178, 170, 0.3);
     color: var(--light);
     cursor: pointer;
     display: flex;
@@ -378,7 +390,7 @@ h1 {
 }
 
 .testimonial-btn:hover {
-    background: rgba(255, 107, 139, 0.4);
+    background: rgba(32, 178, 170, 0.4);
     transform: scale(1.1);
     border-color: var(--primary);
 }
@@ -386,17 +398,23 @@ h1 {
 /* Final CTA */
 .final-cta {
     text-align: center;
-    padding: 60px 0;
+    padding: 40px 30px;
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
-    border-radius: 20px;
-    margin: 40px 0;
+    border-radius: 15px;
+    margin: 40px auto;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 1000px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .final-cta h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 36px;
+    font-size: 32px;
     margin-bottom: 20px;
     color: var(--light);
 }
@@ -405,8 +423,6 @@ h1 {
     font-size: 18px;
     margin-bottom: 30px;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
     opacity: 0.9;
     line-height: 1.6;
 }
@@ -437,14 +453,14 @@ footer {
     }
 }
 
-@keyframes slideInLeft {
+@keyframes fadeInUp {
     from { 
         opacity: 0;
-        transform: translateX(-30px);
+        transform: translateY(20px);
     }
     to { 
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
@@ -470,7 +486,7 @@ footer {
     }
     
     .logo {
-        font-size: 24px;
+        font-size: 36px;
     }
     
     .ad-top {
@@ -479,26 +495,24 @@ footer {
     }
     
     .hero {
-        padding: 30px 0 20px 0;
-        text-align: center;
+        padding: 20px 0;
     }
     
     h1 {
-        font-size: 32px;
+        font-size: 28px;
     }
     
     .subtitle {
-        font-size: 16px;
-        margin-bottom: 20px;
+        font-size: 14px;
+        margin-bottom: 15px;
     }
     
     .cta-section {
-        text-align: center;
-        padding: 25px 0;
+        padding: 20px 0;
     }
     
     .cta-text {
-        font-size: 18px;
+        font-size: 16px;
         margin-bottom: 20px;
     }
     
@@ -508,34 +522,55 @@ footer {
     }
     
     .btn-large {
-        padding: 15px 30px;
-        font-size: 16px;
+        padding: 14px 30px;
+        font-size: 14px;
     }
     
     .testimonial-section {
-        margin: 30px 0;
-        padding: 30px 20px;
+        margin: 30px auto;
+        padding: 20px;
+        height: auto;
+        min-height: 500px;
     }
     
     .section-title {
         font-size: 24px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     
-    .testimonial-container {
-        height: 350px;
+    .testimonial-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+        gap: 20px;
+    }
+    
+    .testimonial-photo {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+    }
+    
+    .testimonial-text-content {
+        text-align: center;
     }
     
     .testimonial-text {
         font-size: 14px;
     }
     
+    .author-name {
+        font-size: 16px;
+    }
+    
     .final-cta {
-        padding: 40px 20px;
+        padding: 30px 20px;
+        height: auto;
+        min-height: 400px;
     }
     
     .final-cta h3 {
-        font-size: 28px;
+        font-size: 24px;
     }
     
     .final-cta p {
@@ -544,25 +579,25 @@ footer {
 }
 
 @media (max-width: 480px) {
-    h1 {
+    .logo {
         font-size: 28px;
     }
     
+    h1 {
+        font-size: 24px;
+    }
+    
     .subtitle {
-        font-size: 14px;
+        font-size: 13px;
     }
     
     .cta-text {
-        font-size: 16px;
-    }
-    
-    .testimonial-container {
-        height: 400px;
+        font-size: 14px;
     }
     
     .testimonial-photo {
-        width: 60px;
-        height: 60px;
+        width: 120px;
+        height: 120px;
     }
     
     .testimonial-controls {
@@ -573,5 +608,15 @@ footer {
         width: 40px;
         height: 40px;
         font-size: 16px;
+    }
+    
+    .gradient-overlay {
+        background: linear-gradient(
+            90deg,
+            rgba(10, 10, 10, 0) 0%,
+            rgba(10, 10, 10, 0) 20%,
+            rgba(10, 10, 10, 0.8) 40%,
+            rgba(10, 10, 10, 0.95) 100%
+        );
     }
 }

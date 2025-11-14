@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Change testimonial every 5 seconds
     function startTestimonialRotation() {
-        testimonialInterval = setInterval(showNextTestimonial, 5000);
+        testimonialInterval = setInterval(showNextTestimonial, 10000);
     }
     
     // Add particle effect to button on hover

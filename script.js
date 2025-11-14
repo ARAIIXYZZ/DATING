@@ -22,12 +22,17 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
+                
+                // Add special animation for benefit cards
+                if (entry.target.classList.contains('benefit-card')) {
+                    entry.target.style.animation = 'cardSlideUp 0.6s ease forwards';
+                }
             }
         });
     }, observerOptions);
     
     // Observe elements for animation
-    const animatedElements = document.querySelectorAll('.hero-content, .cta-section, .stats-section, .final-cta');
+    const animatedElements = document.querySelectorAll('.hero-content, .cta-section, .benefit-card, .final-cta-content');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -35,16 +40,16 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
     
-    // Add pulsing animation to stats
-    const stats = document.querySelectorAll('.stat-number');
-    stats.forEach(stat => {
+    // Add pulsing animation to buttons
+    const mainBtn = document.querySelector('.btn-large');
+    if (mainBtn) {
         setInterval(() => {
-            stat.style.transform = 'scale(1.1)';
+            mainBtn.style.transform = 'scale(1.05)';
             setTimeout(() => {
-                stat.style.transform = 'scale(1)';
-            }, 300);
+                mainBtn.style.transform = 'scale(1)';
+            }, 500);
         }, 3000);
-    });
+    }
     
     // Add glow effect to logo
     const logo = document.querySelector('.logo');
@@ -54,6 +59,21 @@ document.addEventListener('DOMContentLoaded', function() {
             logo.style.textShadow = '0 0 20px rgba(233, 30, 99, 0.6)';
         }, 1000);
     }, 4000);
+    
+    // Add hover effect to benefit cards
+    const benefitCards = document.querySelectorAll('.benefit-card');
+    benefitCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.benefit-icon');
+            icon.style.transform = 'rotate(10deg) scale(1.1)';
+            icon.style.transition = 'transform 0.3s ease';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.benefit-icon');
+            icon.style.transform = 'rotate(0) scale(1)';
+        });
+    });
 });
 
 // Create floating particles in background
@@ -111,18 +131,18 @@ function createButtonParticles(button) {
     }
 }
 
-// Add typing effect to hero text
-function typeWriter(element, text, speed = 50) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
+// Add CSS animation for card slide up
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes cardSlideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
-    
-    type();
-}
+`;
+document.head.appendChild(style);
